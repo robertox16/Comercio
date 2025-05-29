@@ -1,0 +1,148 @@
+{% extends 'tienda/base.html' %}
+{% load static %}
+
+{% block title %}Comprar / Alquilar - ForjaD20{% endblock %}
+
+{% block extra_head %}
+<style>
+    /* Estilos del formulario */
+    .form-container {
+        max-width: 600px;
+        margin: 2rem auto;
+        background: #1a202c;
+        padding: 2rem;
+        border-radius: 0.5rem;
+    }
+    .product-header {
+        display: flex;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .product-header img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 0.5rem;
+    }
+    .product-details h2 {
+        margin: 0;
+        color: white;
+    }
+    .product-details p {
+        margin: 0.5rem 0;
+        color: #ccc;
+    }
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: #fff;
+    }
+    .form-group input,
+    .form-group select {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #2d3748;
+        border-radius: 0.25rem;
+        background: #111;
+        color: white;
+    }
+    .options {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+    .options label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+    }
+    .options input {
+        accent-color: #2b6cb0;
+    }
+    .buttons {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    .buttons button {
+        flex: 1;
+        padding: 0.75rem;
+        border: none;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        font-weight: 600;
+        color: white;
+    }
+    .buttons .buy {
+        background: #2b6cb0;
+    }
+    .buttons .rent {
+        background: #2f855a;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <div class="product-header">
+        <img src="{% static 'images/azul.jpg' %}" alt="Producto">
+        <div class="product-details">
+            <h2>Azul</h2>
+            <p>Diseña los azulejos del palacio real</p>
+            <p style="font-weight:bold; color:white;">Precio: 34.00 €</p>
+            <p style="color:white;">Disponible para alquiler: No</p>
+        </div>
+    </div>
+    <form>
+        
+        <div class="form-group">
+            <label for="quantity">Cantidad</label>
+            <input type="number" id="quantity" value="1" min="1">
+        </div>
+        <div class="form-group">
+            <label>Total</label>
+            <p id="total-price" style="font-weight:bold; color:white;">34.00 €</p>
+        </div>
+        <div class="buttons">
+            <button type="button" class="buy">Comprar ahora</button>
+            
+        </div>
+    </form>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const price = 19.99;
+        const rentRate = 5.00;
+        const buyRadio = document.querySelector('input[name="mode"][value="buy"]');
+        const rentRadio = document.querySelector('input[name="mode"][value="rent"]');
+        const daysGroup = document.getElementById('rental-days-group');
+        const daysSelect = document.getElementById('days');
+        const qtyInput = document.getElementById('quantity');
+        const totalEl = document.getElementById('total-price');
+
+        function updateUI() {
+            daysGroup.style.display = rentRadio.checked ? 'block' : 'none';
+            calculateTotal();
+        }
+        function calculateTotal() {
+            const qty = parseInt(qtyInput.value) || 1;
+            let total = price * qty;
+            if (rentRadio.checked) {
+                const days = parseInt(daysSelect.value) || 1;
+                total = rentRate * days * qty;
+            }
+            totalEl.textContent = total.toFixed(2) + ' €';
+        }
+
+        buyRadio.addEventListener('change', updateUI);
+        rentRadio.addEventListener('change', updateUI);
+        daysSelect.addEventListener('change', calculateTotal);
+        qtyInput.addEventListener('input', calculateTotal);
+    });
+</script>
+{% endblock %}

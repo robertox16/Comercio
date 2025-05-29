@@ -1,0 +1,81 @@
+{% extends 'tienda/base.html' %}
+{% load static %}
+
+{% block title %}Foro - ForjaD20{% endblock %}
+
+{% block content %}
+  <!-- Simulación de foro de comentarios -->
+  <section style="max-width:800px; margin: 2rem auto; background:#2d3748; padding:1.5rem; border-radius:0.5rem; color:white;">
+    <h2 style="font-size:2rem; margin-bottom:1rem;">Foro de la Comunidad</h2>
+
+    <!-- Formulario para nuevo tema -->
+    <div style="margin-bottom:2rem;">
+      <input type="text" placeholder="Título del tema" style="width:100%; padding:0.5rem; border-radius:0.25rem; border:none; margin-bottom:0.5rem;">
+      <textarea rows="3" placeholder="Escribe tu comentario..." style="width:100%; padding:0.5rem; border-radius:0.25rem; border:none;"></textarea>
+      <button style="margin-top:0.5rem; padding:0.5rem 1rem; background:#4a5568; border:none; border-radius:0.25rem; cursor:pointer;">Publicar tema</button>
+    </div>
+
+    <!-- Hilo de comentarios -->
+    <div style="border-top:1px solid #4a5568; padding-top:1rem;">
+      <!-- Comentario principal 1 -->
+      <div style="margin-bottom:2.5rem;">
+        <div style="display:flex; align-items:center; margin-bottom:0.5rem;">
+          <img src="{% static 'images/avatar1.png' %}" alt="Avatar" style="width:40px; height:40px; border-radius:50%; margin-right:0.75rem;">
+          <strong>Usuario123</strong> <span style="margin-left:0.5rem; font-size:0.875rem; color:#a0aec0;">Hace 2 horas</span>
+        </div>
+        <h3 style="margin:0 0 0.5rem 0;">Opiniones sobre Catán reciente</h3>
+        <p>Acabo de comprar Catán en la tienda, ¡increíble! ¿Qué estrategias recomendáis para principiantes?</p>
+        <button style="margin-top:0.5rem; padding:0.25rem 0.5rem; background:#4a5568; color:white; border:none; border-radius:0.25rem; cursor:pointer; display:flex; align-items:center;"><span style="margin-right:0.25rem;">👍</span><span>Me gusta</span><span style="margin-left:0.5rem;">10</span></button>
+
+        <!-- Respuesta 1.1 -->
+        <div style="margin-top:1rem; margin-left:3rem;">
+          <div style="display:flex; align-items:center; margin-bottom:0.5rem;">
+            <img src="{% static 'images/avatar2.png' %}" alt="Avatar" style="width:32px; height:32px; border-radius:50%; margin-right:0.5rem;">
+            <strong>GamerPro</strong> <span style="margin-left:0.5rem; font-size:0.75rem; color:#a0aec0;">Hace 1 hora</span>
+          </div>
+          <p>Para empezar, céntrate en construir carreteras hacia puertos. Así obtienes recursos clave más rápido.</p>
+        </div>
+      </div>
+
+      <!-- Comentario principal 2 -->
+      <div style="margin-bottom:2.5rem;">
+        <div style="display:flex; align-items:center; margin-bottom:0.5rem;">
+          <img src="{% static 'images/avatar3.png' %}" alt="Avatar" style="width:40px; height:40px; border-radius:50%; margin-right:0.75rem;">
+          <strong>PintorDeMiniaturas</strong> <span style="margin-left:0.5rem; font-size:0.875rem; color:#a0aec0;">Ayer</span>
+        </div>
+        <h3 style="margin:0 0 0.5rem 0;">Miniaturas de Warhammer pintadas</h3>
+        <p>Os comparto mis últimas miniaturas de Warhammer 40K. ¿Qué os parecen los degradados?</p>
+        <button style="margin-top:0.5rem; padding:0.25rem 0.5rem; background:#4a5568; color:white; border:none; border-radius:0.25rem; cursor:pointer; display:flex; align-items:center;"><span style="margin-right:0.25rem;">👍</span><span>Me gusta</span><span style="margin-left:0.5rem;">7</span></button>
+
+        <!-- Respuesta 2.1 -->
+        <div style="margin-top:1rem; margin-left:3rem;">
+          <div style="display:flex; align-items:center; margin-bottom:0.5rem;">
+            <img src="{% static 'images/avatar4.png' %}" alt="Avatar" style="width:32px; height:32px; border-radius:50%; margin-right:0.5rem;">
+            <strong>ArteEnMiniatura</strong> <span style="margin-left:0.5rem; font-size:0.75rem; color:#a0aec0;">Hace 3 horas</span>
+          </div>
+          <p>¡Increíble trabajo! Te recomendaría ajustar el contraste de luz para resaltar más los relieves.</p>
+        </div>
+      </div>
+
+      <!-- Comentario principal 3 -->
+      <div style="margin-bottom:2.5rem;">
+        <div style="display:flex; align-items:center; margin-bottom:0.5rem;">
+          <img src="{% static 'images/avatar5.png' %}" alt="Avatar" style="width:40px; height:40px; border-radius:50%; margin-right:0.75rem;">
+          <strong>DnDMaster</strong> <span style="margin-left:0.5rem; font-size:0.875rem; color:#a0aec0;">Hace 4 días</span>
+        </div>
+        <h3 style="margin:0 0 0.5rem 0;">¿Ideas para campaña de DnD?</h3>
+        <p>Estoy organizando una campaña de DnD ambientada en un reino submarino. ¿Sugerencias de monstruos o tramas?</p>
+        <button style="margin-top:0.5rem; padding:0.25rem 0.5rem; background:#4a5568; color:white; border:none; border-radius:0.25rem; cursor:pointer; display:flex; align-items:center;"><span style="margin-right:0.25rem;">👍</span><span>Me gusta</span><span style="margin-left:0.5rem;">15</span></button>
+
+        <!-- Respuesta 3.1 -->
+        <div style="margin-top:1rem; margin-left:3rem;">
+          <div style="display:flex; align-items:center; margin-bottom:0.5rem;">
+            <img src="{% static 'images/avatar6.png' %}" alt="Avatar" style="width:32px; height:32px; border-radius:50%; margin-right:0.5rem;">
+            <strong>RoleroExperto</strong> <span style="margin-left:0.5rem; font-size:0.75rem; color:#a0aec0;">Hace 2 días</span>
+          </div>
+          <p>Prueba con sirenas guerreras y una ciudad en ruinas protegida por elementales de agua.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

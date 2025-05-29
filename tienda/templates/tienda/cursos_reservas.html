@@ -1,0 +1,260 @@
+{% extends 'tienda/base.html' %}
+{% load static %}
+
+{% block title %}Cursos y Reservas - ForjaD20{% endblock %}
+
+{% block extra_head %}
+<style>
+    /* Títulos de sección */
+    .section-title { font-size: 1.75rem; margin-bottom: 1rem; color: white; }
+    /* Lista de cursos */
+    .course-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+    .course-card { background: #1a202c; padding: 1rem; border-radius: 0.5rem; }
+    .course-card h3 { margin: 0; color: #fff; }
+    .course-card p { margin: 0.5rem 0; color: #ccc; font-size: 0.9rem; }
+    .availability { font-weight: 600; color: #e2e8f0; }
+    /* Formulario de reserva */
+    .reservation-container { max-width: 600px; margin: 0 auto; background: #1a202c; padding: 2rem; border-radius: 0.5rem; }
+    .reservation-container label { color: #fff; font-weight: 600; display: block; margin-bottom: 0.5rem; }
+    .reservation-container select,
+    .reservation-container input { width: 100%; padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #2d3748; border-radius: 0.25rem; background: #111; color: #fff; }
+    .reservation-container button { padding: 0.75rem 1.5rem; border: none; border-radius: 0.25rem; background: #2b6cb0; color: #fff; font-weight: 600; cursor: pointer; }
+</style>
+{% endblock %}
+
+{% block content %}
+<section>
+    <h2 class="section-title">Cursos de pintura</h2>
+<div class="course-list" style="display:flex; gap:1rem; flex-wrap:wrap;">
+  <div class="course-card" style="background:#2d3748; padding:1rem; border-radius:0.5rem; flex:1; min-width:200px;">
+    <h3>Curso Básico de Pintura</h3>
+    <p>Fecha: 15/06/2025</p>
+    <p>Hora: 17:00 - 19:00</p>
+    <p class="availability">Plazas disponibles: 5</p>
+    <button
+      type="button"
+      onclick="window.location.href='/cursouno/';"
+      style="margin-top:0.5rem; width:100%; padding:0.5rem; background:#2b6cb0; color:white; border:none; border-radius:0.25rem; cursor:pointer;"
+    >
+      Reservar
+    </button>
+  </div>
+
+  <div class="course-card" style="background:#2d3748; padding:1rem; border-radius:0.5rem; flex:1; min-width:200px;">
+    <h3>Técnicas Avanzadas</h3>
+    <p>Fecha: 20/06/2025</p>
+    <p>Hora: 18:00 - 20:00</p>
+    <p class="availability">Plazas disponibles: 3</p>
+    <button
+      type="button"
+      onclick="window.location.href='/cursodos/';"
+      style="margin-top:0.5rem; width:100%; padding:0.5rem; background:#2b6cb0; color:white; border:none; border-radius:0.25rem; cursor:pointer;"
+    >
+      Reservar
+    </button>
+  </div>
+
+  <div class="course-card" style="background:#2d3748; padding:1rem; border-radius:0.5rem; flex:1; min-width:200px;">
+    <h3>Pintura y Detallado</h3>
+    <p>Fecha: 25/06/2025</p>
+    <p>Hora: 16:00 - 18:00</p>
+    <p class="availability">Plazas disponibles: 2</p>
+    <button
+      type="button"
+      onclick="window.location.href='/cursotres/';"
+      style="margin-top:0.5rem; width:100%; padding:0.5rem; background:#2b6cb0; color:white; border:none; border-radius:0.25rem; cursor:pointer;"
+    >
+      Reservar
+    </button>
+  </div>
+
+  <div class="course-card" style="background:#2d3748; padding:1rem; border-radius:0.5rem; flex:1; min-width:200px;">
+    <h3>Curso Básico de modelado 3D</h3>
+    <p>Fecha: 30/06/2025</p>
+    <p>Hora: 17:00 - 19:00</p>
+    <p class="availability">Plazas disponibles: 20</p>
+    <button
+      type="button"
+      onclick="window.location.href='/cursocuatro/';"
+      style="margin-top:0.5rem; width:100%; padding:0.5rem; background:#2b6cb0; color:white; border:none; border-radius:0.25rem; cursor:pointer;"
+    >
+      Reservar
+    </button>
+  </div>
+</div>
+
+
+    <h2 class="section-title">Eventos y Torneos</h2>
+<div class="event-list" style="display:flex; gap:1rem; flex-wrap:wrap;">
+  <div class="event-card" style="background:#2d3748; padding:1rem; border-radius:0.5rem; flex:1; min-width:200px;">
+    <h3>Torneo Magic The Gathering</h3>
+    <p>Fecha: 16/06/2025</p>
+    <p>Hora: 16:00 - 20:00</p>
+    <p class="availability">Plazas disponibles: 40</p>
+    <button
+      type="button"
+      onclick="window.location.href='/eventouno/';"
+      style="margin-top:0.5rem; width:100%; padding:0.5rem; background:#2b6cb0; color:white; border:none; border-radius:0.25rem; cursor:pointer;"
+    >
+      Inscribirme
+    </button>
+  </div>
+
+  <div class="event-card" style="background:#2d3748; padding:1rem; border-radius:0.5rem; flex:1; min-width:200px;">
+    <h3>Evento Inaugural Nueva expansión Warhammer</h3>
+    <p>Fecha: 18/06/2025</p>
+    <p>Hora: 17:00 - 19:00</p>
+    <p class="availability">Plazas disponibles: 40</p>
+    <button
+      type="button"
+      onclick="window.location.href='/eventodos/';"
+      style="margin-top:0.5rem; width:100%; padding:0.5rem; background:#2b6cb0; color:white; border:none; border-radius:0.25rem; cursor:pointer;"
+    >
+      Inscribirme
+    </button>
+  </div>
+
+  <div class="event-card" style="background:#2d3748; padding:1rem; border-radius:0.5rem; flex:1; min-width:200px;">
+    <h3>Torneo Catan</h3>
+    <p>Fecha: 22/06/2025</p>
+    <p>Hora: 18:00 - 21:00</p>
+    <p class="availability">Plazas disponibles: 20</p>
+    <button
+      type="button"
+      onclick="window.location.href='/eventotres/';"
+      style="margin-top:0.5rem; width:100%; padding:0.5rem; background:#2b6cb0; color:white; border:none; border-radius:0.25rem; cursor:pointer;"
+    >
+      Inscribirme
+    </button>
+  </div>
+
+  <div class="event-card" style="background:#2d3748; padding:1rem; border-radius:0.5rem; flex:1; min-width:200px;">
+    <h3>Torneo Dixit</h3>
+    <p>Fecha: 28/06/2025</p>
+    <p>Hora: 16:00 - 18:00</p>
+    <p class="availability">Plazas disponibles: 25</p>
+    <button
+      type="button"
+      onclick="window.location.href='/eventocuatro/';"
+      style="margin-top:0.5rem; width:100%; padding:0.5rem; background:#2b6cb0; color:white; border:none; border-radius:0.25rem; cursor:pointer;"
+    >
+      Inscribirme
+    </button>
+  </div>
+</div>
+
+
+</section>
+
+<section>
+    <h2 class="section-title">Reserva Servicios en Tienda Física</h2>
+    <div class="reservation-container">
+        <form>
+            <label for="service">Servicio</label>
+            <select id="service" name="service">
+                <option value="espacio_dnd">Sala D&D</option>
+                <option value="espacio_juego">Espacio de juego</option>
+                <option value="taller_reparacion">Taller de reparación</option>
+                <option value="asesoria_diseño">Diseño 3D asesorado</option>
+            </select>
+
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" name="email" placeholder="tu@ejemplo.com">
+
+            <div class="form-group">
+                <label for="day">Día</label>
+                <select id="day" name="day">
+                    <!-- Días 1 a 31 -->
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="month">Mes</label>
+                <select id="month" name="month">
+                    <option value="1">Enero</option>
+                    <option value="2">Febrero</option>
+                    <option value="3">Marzo</option>
+                    <option value="4">Abril</option>
+                    <option value="5">Mayo</option>
+                    <option value="6">Junio</option>
+                    <option value="7">Julio</option>
+                    <option value="8">Agosto</option>
+                    <option value="9">Septiembre</option>
+                    <option value="10">Octubre</option>
+                    <option value="11">Noviembre</option>
+                    <option value="12">Diciembre</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="time">Hora</label>
+                <select id="time" name="time">
+                    <!-- Horas disponibles de 09:00 a 20:00 -->
+                    <option value="09:00">09:00</option>
+                    <option value="10:00">10:00</option>
+                    <option value="11:00">11:00</option>
+                    <option value="12:00">12:00</option>
+                    <option value="13:00">13:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                    <option value="18:00">18:00</option>
+                    <option value="19:00">19:00</option>
+                    <option value="20:00">20:00</option>
+                </select>
+            </div>
+            <button type="submit">Reservar</button>
+        </form>
+    <script>
+        // Script para el pop-up de reserva
+        const form = document.querySelector('.reservation-container form');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const service = document.getElementById('service').value;
+            const email = document.getElementById('email').value.trim();
+            const day = document.getElementById('day').value;
+            const month = document.getElementById('month').value;
+            const time = document.getElementById('time').value;
+            if (service && email && day && month && time) {
+                alert('Gracias por tu reserva');
+                form.reset();
+            } else {
+                alert('Por favor, rellena todos los campos');
+            }
+        });
+    </script>
+    </div>
+</section>
+{% endblock %}
+
+

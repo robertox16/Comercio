@@ -1,0 +1,289 @@
+{% extends 'tienda/base.html' %}
+{% load static %}
+
+{% block title %}Inicio - ForjaD20{% endblock %}
+
+{% block content %}
+  <!-- Hero Section with Color Background Panels -->
+  <section id="hero" style="position:relative; width:100%; max-width:1200px; margin:0 auto 3rem; overflow:hidden; height:6rem; border-radius:0.75rem;">
+    <!-- Carousel Inner -->
+    <div id="carousel-inner" style="display:flex; width:300%; height:100%; transition:transform 0.5s ease;">
+      <!-- Slide 1: Ofertas -->
+      <div class="carousel-item" style="flex:0 0 33.3333%; display:flex; align-items:center; justify-content:center; position:relative; background: linear-gradient(135deg, #e53e3e 0%, #feb2b2 100%);">
+        <h1 style="color:white; font-size:2.5rem; font-weight:bold;">Ofertas</h1>
+      </div>
+      <!-- Slide 2: Lo más vendido -->
+      <div class="carousel-item" style="flex:0 0 33.3333%; display:flex; align-items:center; justify-content:center; position:relative; background: linear-gradient(135deg, #2b6cb0 0%, #90cdf4 100%);">
+        <h1 style="color:white; font-size:2.5rem; font-weight:bold;">Lo más vendido</h1>
+      </div>
+      <!-- Slide 3: Reseñas Youtube -->
+      <div class="carousel-item" style="flex:0 0 33.3333%; display:flex; align-items:center; justify-content:center; position:relative; background: linear-gradient(135deg, #2f855a 0%, #9ae6b4 100%);">
+        <h1 style="color:white; font-size:2.5rem; font-weight:bold;">Reseñas Youtube</h1>
+      </div>
+    </div>
+    <!-- Controls -->
+    <button id="prev-btn" style="position:absolute; top:50%; left:1rem; transform:translateY(-50%); background-color:rgba(0,0,0,0.5); color:white; padding:0.5rem; border:none; border-radius:50%; cursor:pointer;">&lt;</button>
+    <button id="next-btn" style="position:absolute; top:50%; right:1rem; transform:translateY(-50%); background-color:rgba(0,0,0,0.5); color:white; padding:0.5rem; border:none; border-radius:50%; cursor:pointer;">&gt;</button>
+  </section>
+
+  <!-- Bienvenida -->
+  <section class="text-center mb-8">
+    <h2 class="text-3xl font-bold">Bienvenido a ForjaD20</h2>
+    <p class="mt-2 text-gray-700">En ForjaD20 encontrarás el mayor catálogo de juegos de mesa (estrategia, party games, wargames) y el único configurador 3D en España para personalizar miniaturas al detalle. Compra, alquila y reserva tu sala de juego en un solo clic: desde los clásicos Catan o Carcassonne hasta ediciones de Dungeons & Dragons con figuras imprimibles en resina de alta definición. Únete a nuestra comunidad en Discord, participa en torneos y mejora tus figuras con nuestros talleres de pintado. ForjaD20: tu punto único para vivir la experiencia lúdica completa.</p>
+  </section>
+
+  <!-- Categorías Estrella -->
+  <section id="categorias" style="max-width:1200px; margin:0 auto 3rem;">
+    <h2 style="font-size:2rem; font-weight:bold; text-align:center; margin-bottom:1.5rem;">Nuestras Categorías</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;">
+      <!-- Card Juegos de Mesa -->
+      <a href="{% url 'juegos_mesa' %}" style="display:block; background:white; border-radius:0.75rem; overflow:hidden; box-shadow:0 4px 6px rgba(0,0,0,0.1); text-decoration:none; transition:transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.03)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.15)'" onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)'">
+        <img src="{% static 'images/juegos_de_mesa.jpg' %}" alt="Juegos de Mesa" style="width:100%; height:180px; object-fit:cover;">
+        <div style="padding:1rem; text-align:center;">
+          <h3 style="font-size:1.5rem; margin-bottom:0.5rem; color:#2d3748;">Juegos de Mesa</h3>
+          <p style="color:#4a5568;">Compra o alquila tus favoritos</p>
+        </div>
+      </a>
+      <!-- Card Miniaturas -->
+      <a href="{% url 'miniaturas' %}" style="display:block; background:white; border-radius:0.75rem; overflow:hidden; box-shadow:0 4px 6px rgba(0,0,0,0.1); text-decoration:none; transition:transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.03)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.15)'" onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)'">
+        <img src="{% static 'images/miniaturas.jpg' %}" alt="Miniaturas" style="width:100%; height:180px; object-fit:cover;">
+        <div style="padding:1rem; text-align:center;">
+          <h3 style="font-size:1.5rem; margin-bottom:0.5rem; color:#2d3748;">Miniaturas</h3>
+          <p style="color:#4a5568;">Warhammer, D&amp;D y más</p>
+        </div>
+      </a>
+      <!-- Card Cursos de Pintura -->
+      <a href="{% url 'cursos_reservas' %}" style="display:block; background:white; border-radius:0.75rem; overflow:hidden; box-shadow:0 4px 6px rgba(0,0,0,0.1); text-decoration:none; transition:transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.03)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.15)'" onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)'">
+        <img src="{% static 'images/cursos_pintura.jpg' %}" alt="Cursos de Pintura" style="width:100%; height:180px; object-fit:cover;">
+        <div style="padding:1rem; text-align:center;">
+          <h3 style="font-size:1.5rem; margin-bottom:0.5rem; color:#2d3748;">Cursos &amp; Reservas</h3>
+          <p style="color:#4a5568;">Pintura, ambientación y reservas</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+
+    <!-- Sección de Reseñas de YouTube -->
+  <section id="youtube-reviews" style="max-width:1200px; margin:0 auto 3rem;">
+    <h2 style="font-size:2rem; font-weight:bold; text-align:center; margin-bottom:1.5rem; color:white;">Reseñas de YouTube</h2>
+    <div style="display:flex; gap:1rem; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:1rem;">
+      
+      <!-- Video 1 -->
+      <div style="flex:0 0 300px; scroll-snap-align:start; background:#000; border-radius:0.5rem; overflow:hidden;">
+        <iframe width="100%" height="180"
+                src="https://www.youtube.com/embed/gOo2t0BSGQE"
+                title="Reseña Juego 1"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                style="display:block; border:none;">
+        </iframe>
+      </div>
+
+      <!-- Video 2 -->
+      <div style="flex:0 0 300px; scroll-snap-align:start; background:#000; border-radius:0.5rem; overflow:hidden;">
+        <iframe width="100%" height="180"
+                src="https://www.youtube.com/embed/tlVtvwYT864"
+                title="Reseña Juego 2"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                style="display:block; border:none;">
+        </iframe>
+      </div>
+
+      <!-- Video 3 -->
+      <div style="flex:0 0 300px; scroll-snap-align:start; background:#000; border-radius:0.5rem; overflow:hidden;">
+        <iframe width="100%" height="180"
+                src="https://www.youtube.com/embed/dcGZ-TbnBCc"
+                title="Reseña Juego 3"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                style="display:block; border:none;">
+        </iframe>
+      </div>
+
+      <!-- Video 4 -->
+      <div style="flex:0 0 300px; scroll-snap-align:start; background:#000; border-radius:0.5rem; overflow:hidden;">
+        <iframe width="100%" height="180"
+                src="https://www.youtube.com/embed/Y4isWmpho0w"
+                title="Reseña Juego 4"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                style="display:block; border:none;">
+        </iframe>
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <!-- Comunidad / Foro -->
+  <section id="comunidad" style="max-width:1200px; margin:0 auto 3rem;">
+    <h2 style="font-size:2rem; font-weight:bold; text-align:center; margin-bottom:1.5rem; color:white;">Comunidad / Foro</h2>
+    <div style="background-color:#1a202c; padding:2rem; border-radius:0.75rem;">
+      <!-- Comentario 1 -->
+      <div style="border-bottom:1px solid #2d3748; padding:1rem 0;">
+        <div style="display:flex; align-items:center; margin-bottom:0.5rem;">
+          <img src="{% static 'images/avatar4.png' %}" alt="Avatar" style="width:40px; height:40px; border-radius:50%; margin-right:0.75rem;">
+          <div>
+            <strong style="color:white;">AnaGamer</strong> <span style="color:#a0aec0; font-size:0.875rem;">hace 2 horas</span>
+          </div>
+        </div>
+        <p style="color:white; margin-bottom:0.5rem;">¿Alguien ha probado el nuevo juego de estrategia medieval? ¡Me muero de ganas por reseñas!</p>
+        <div style="display:flex; justify-content:flex-end; align-items:center; gap:0.75rem;">
+          <button style="background:transparent; border:none; cursor:pointer; font-size:1.2rem; color:#718096;">❤️</button><span style="color:#a0aec0;">12</span>
+          <button style="background:transparent; border:none; cursor:pointer; font-size:1.2rem; color:#718096;">💬</button><span style="color:#a0aec0;">4</span>
+        </div>
+      </div>
+      <!-- Comentario 2 -->
+      <div style="border-bottom:1px solid #2d3748; padding:1rem 0;">
+        <div style="display:flex; align-items:center; margin-bottom:0.5rem;">
+          <img src="{% static 'images/avatar2.png' %}" alt="Avatar" style="width:40px; height:40px; border-radius:50%; margin-right:0.75rem;">
+          <div>
+            <strong style="color:white;">Rolero22</strong> <span style="color:#a0aec0; font-size:0.875rem;">hace 5 horas</span>
+          </div>
+        </div>
+        <p style="color:white; margin-bottom:0.5rem;">Recomiendo reservar antes el curso de pintura, ¡las plazas vuelan! 😊</p>
+        <div style="display:flex; justify-content:flex-end; align-items:center; gap:0.75rem;">
+          <button style="background:transparent; border:none; cursor:pointer; font-size:1.2rem; color:#718096;">❤️</button><span style="color:#a0aec0;">8</span>
+          <button style="background:transparent; border:none; cursor:pointer; font-size:1.2rem; color:#718096;">💬</button><span style="color:#a0aec0;">2</span>
+        </div>
+      </div>
+      <!-- Comentario 3 -->
+      <div style="border-bottom:1px solid #2d3748; padding:1rem 0;">
+        <div style="display:flex; align-items:center; margin-bottom:0.5rem;">
+          <img src="{% static 'images/avatar3.png' %}" alt="Avatar" style="width:40px; height:40px; border-radius:50%; margin-right:0.75rem;">
+          <div>
+            <strong style="color:white;">MiniMaster</strong> <span style="color:#a0aec0; font-size:0.875rem;">ayer</span>
+          </div>
+        </div>
+        <p style="color:white; margin-bottom:0.5rem;">¿Ofertan miniaturas de D&amp;D? Vi unas chulísimas la semana pasada.</p>
+        <div style="display:flex; justify-content:flex-end; align-items:center; gap:0.75rem;">
+          <button style="background:transparent; border:none; cursor:pointer; font-size:1.2rem; color:#718096;">❤️</button><span style="color:#a0aec0;">5</span>
+          <button style="background:transparent; border:none; cursor:pointer; font-size:1.2rem; color:#718096;">💬</button><span style="color:#a0aec0;">1</span>
+        </div>
+      </div>
+      <!-- Comentario 4 -->
+      <div style="padding:1rem 0;">
+        <div style="display:flex; align-items:center; margin-bottom:0.5rem;">
+          <img src="{% static 'images/avatar1.png' %}" alt="Avatar" style="width:40px; height:40px; border-radius:50%; margin-right:0.75rem;">
+          <div>
+            <strong style="color:white;">Curioso123</strong> <span style="color:#a0aec0; font-size:0.875rem;">hoy</span>
+          </div>
+        </div>
+        <p style="color:white; margin-bottom:0.5rem;">¿Cómo funciona el alquiler de juegos? ¿Es por días o por semanas?</p>
+        <div style="display:flex; justify-content:flex-end; align-items:center; gap:0.75rem;">
+          <button style="background:transparent; border:none; cursor:pointer; font-size:1.2rem; color:#718096;">❤️</button><span style="color:#a0aec0;">3</span>
+          <button style="background:transparent; border:none; cursor:pointer; font-size:1.2rem; color:#718096;">💬</button><span style="color:#a0aec0;">0</span>
+        </div>
+      </div>
+      <!-- Ver todos los comentarios -->
+<div style="text-align:center; margin-top:1.5rem;">
+  <a href="/foro/" style="text-decoration:none;">
+    <button
+      type="button"
+      style="padding:0.75rem 1.5rem; background-color:#2d3748; color:white; border:none; border-radius:0.5rem; cursor:pointer;"
+    >
+      Ver todos los comentarios
+    </button>
+  </a>
+</div>
+
+    </div>
+  </section>
+
+  <!-- Newsletter Subscription -->
+<section id="newsletter" style="max-width:600px; margin:0 auto 3rem; background:#2d3748; padding:2rem; border-radius:0.75rem; display:flex; flex-direction:column; align-items:center; text-align:center;">
+  <h2 style="color:white; font-size:1.75rem; font-weight:bold; margin-bottom:1rem;">Suscríbete a nuestra Newsletter</h2>
+  <p style="color:#a0aec0; margin-bottom:1.5rem; width:80%;">Recibe ofertas, novedades y reseñas directamente en tu bandeja de entrada.</p>
+  <!-- Cambiamos el botón a type="button" y añadimos el onclick -->
+  <form style="display:flex; flex-direction:column; align-items:center; gap:1rem; width:100%;">
+    <input type="email" name="email" placeholder="Introduce tu email" required
+           style="padding:0.75rem; border:none; border-radius:0.5rem; width:80%;">
+    <button
+      type="button"
+      onclick="alert('Gracias por apuntarte a nuestra Newsletter');"
+      style="padding:0.75rem 2rem; background:#e53e3e; color:white; border:none; border-radius:0.5rem; cursor:pointer; font-size:1rem;"
+    >
+      Suscribirme
+    </button>
+  </form>
+</section>
+
+  <!-- Footer -->
+  <footer style="background:#1a202c; padding:2rem 0; color:#a0aec0;">
+    <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between; gap:1rem;">
+      <div>
+        <h3 style="color:white; font-size:1.25rem; margin-bottom:0.5rem;">ForjaD20</h3>
+        <p>Tu tienda de juegos de mesa, miniaturas y cursos.</p>
+      </div>
+      <div>
+        <h4 style="color:white; font-size:1.1rem; margin-bottom:0.5rem;">Enlaces</h4>
+        <ul style="list-style:none; padding:0;">
+          <li><a href="#" style="color:#a0aec0; text-decoration:none;">Inicio</a></li>
+          <li><a href="#" style="color:#a0aec0; text-decoration:none;">Juegos de Mesa</a></li>
+          <li><a href="#" style="color:#a0aec0; text-decoration:none;">Miniaturas</a></li>
+          <li><a href="#" style="color:#a0aec0; text-decoration:none;">Cursos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:white; font-size:1.1rem; margin-bottom:0.5rem;">Contacto</h4>
+        <p>Email: <a href="mailto:info@forjad20.com" style="color:#a0aec0;">info@forjad20.com</a></p>
+        <p>Teléfono: <a href="tel:+34900000000" style="color:#a0aec0;">900 000 000</a></p>
+      </div>
+      <div>
+        <h4 style="color:white; font-size:1.1rem; margin-bottom:0.5rem;">Síguenos</h4>
+        <div style="display:flex; gap:0.5rem;">
+          <a href="#" style="color:#a0aec0; font-size:1.25rem;">👍</a>
+          <a href="#" style="color:#a0aec0; font-size:1.25rem;">🐦</a>
+          <a href="#" style="color:#a0aec0; font-size:1.25rem;">📸</a>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:1.5rem; font-size:0.875rem;">
+      &copy; {{ now|date:"Y" }} ForjaD20. Todos los derechos reservados.
+    </div>
+  </footer>
+
+
+
+  <!-- Carousel Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const carouselInner = document.getElementById('carousel-inner');
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+      const totalSlides = carouselInner.children.length;
+      let currentIndex = 0;
+
+      function updateCarousel() {
+        const offsetPercent = -(currentIndex * (100 / totalSlides));
+        carouselInner.style.transform = `translateX(${offsetPercent}%)`;
+      }
+
+      prevBtn.addEventListener('click', function() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+      });
+
+      nextBtn.addEventListener('click', function() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel();
+      });
+
+      // Initialize
+      updateCarousel();
+
+      // Autoplay every 5 seconds
+      setInterval(function() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel();
+      }, 5000);
+    });
+  </script>
+{% endblock %}

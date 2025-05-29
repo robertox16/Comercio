@@ -1,0 +1,103 @@
+{% extends 'tienda/base.html' %}
+{% load static %}
+
+{% block title %}Diseño 3D - ForjaD20{% endblock %}
+
+{% block extra_head %}
+<style>
+    .section {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 1rem;
+    }
+    .section h2 {
+        font-size: 1.75rem;
+        margin-bottom: 0.5rem;
+        color: white;
+    }
+    .section p {
+        color: #ccc;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+    .tutorials {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+    .tutorials iframe {
+        width: 100%;
+        height: 400px;
+        border: none;
+        border-radius: 0.5rem;
+    }
+    .service-options {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+    .service-card {
+        background: #1a202c;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        color: #ccc;
+    }
+    .service-card h3 {
+        margin-top: 0;
+        color: white;
+    }
+    .service-card p {
+        margin: 0.5rem 0;
+        font-size: 0.9rem;
+    }
+    .service-card a.button {
+        display: inline-block;
+        margin-top: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: #2b6cb0;
+        color: white;
+        border-radius: 0.25rem;
+        text-decoration: none;
+        font-weight: 600;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="section">
+    <h2>¿Qué es el modelado 3D con HeroForge?</h2>
+    <p>Sumérgete en un universo creativo donde tu imaginación no tiene límites. Con <a href="https://www.heroforge.com/" target="_blank">HeroForge</a>, cada rasgo, armadura y pose está al alcance de tu mano: ajusta milimétricamente cada detalle, desde la textura de la tela hasta el brillo de la espada, y observa en tiempo real cómo tu figura cobra vida en 3D.</p>
+    <p>En ForjaD20 llevamos tu diseño al siguiente nivel ofreciéndote dos opciones premium:</p>
+    <ul style="color:#ccc; margin-left:1.5rem;">
+        <li>Recoge tu figura impresa en nuestra tienda, lista para lucirse en tu vitrina. Elige pintura artesanal de nuestros expertos o deja el lienzo en blanco para tu propio toque.</li>
+        <li>Envía tu archivo STL y déjalo en manos de nuestras impresoras 3D de alta precisión. Te esperamos con tu pieza perfecta, lista para jugar o para pintar a tu gusto.</li>
+    </ul>
+</section>
+
+<section class="section">
+    <h2>Tutoriales en vídeo</h2>
+    <div class="tutorials">
+        <iframe src="https://www.youtube.com/embed/IQjPgteC70E?list=PLX1N9CJ8TOjBOlf_ZHPAt7Oob-2n43-NI" title="Introducción a HeroForge" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/cjaUowHvYpc?list=PLX1N9CJ8TOjBOlf_ZHPAt7Oob-2n43-NI&index=2" title="Personalización Avanzada en HeroForge" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/y3ek2J3gAWA?list=PLX1N9CJ8TOjBOlf_ZHPAt7Oob-2n43-NI&index=4" title="Consejos de Pintura para Figuras 3D" allowfullscreen></iframe>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Nuestro Servicio</h2>
+    <div class="service-options">
+        <div class="service-card">
+            <h3>Diseño y Recogida en Tienda</h3>
+            <p>Nuestro equipo de artesanos digitales te guiará paso a paso para lograr la figura perfecta. Diseña tu modelo en HeroForge y deja el resto en nuestras manos: impresión 3D de alta fidelidad y pintura artesanal para un acabado espectacular.</p>
+            <a href="#" class="button">Reservar diseño</a>
+        </div>
+        <div class="service-card">
+            <h3>Envío de Archivo STL</h3>
+            <p>Si ya eres un maestro del modelado, envíanos tu archivo STL y aprovecha nuestras impresoras 3D de última generación para obtener resultados impecables. ¡Tu creación, lista para la batalla!</p>
+            <a href="#" class="button">Enviar STL</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

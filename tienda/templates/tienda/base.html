@@ -1,0 +1,114 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}ForjaD20{% endblock %}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #111;
+            color: #fff;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #1a1a1a;
+            border-bottom: 1px solid #333;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        nav {
+            flex: 1;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .iconos {
+            display: flex;
+            gap: 15px;
+        }
+
+        .iconos a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        main {
+            padding: 2rem;
+            min-height: 70vh;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #aaa;
+            border-top: 1px solid #333;
+        }
+    </style>
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+
+    {% load static %}
+
+    <header>
+        <div class="logo">
+            <!-- Cambia la URL para usar el logo desde static -->
+            <img src="{% static 'images/icono.png' %}" alt="Logo">
+            <span style="font-size: 1.5rem; font-weight: 600;">ForjaD20</span>
+        </div>
+        <nav>
+            <a href="{% url 'home' %}">Inicio</a>
+            <a href="{% url 'juegos_mesa' %}">Compra/Alquiler</a>
+            <a href="{% url 'modelado' %}">Diseño 3D</a>
+            <a href="{% url 'miniaturas' %}">Miniaturas</a>
+            <a href="{% url 'cursos_reservas' %}">Tienda Física</a>
+            <a href="{% url 'foro' %}">Foro</a>
+        </nav>
+        <div class="iconos">
+            
+            
+        </div>
+    </header>
+    
+
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer>
+    &copy; {{ now.year }} ForjaD20. Todos los derechos reservados. Diseñado con ❤️ para el mundo de los juegos de mesa.
+</footer>
+
+</body>
+</html>

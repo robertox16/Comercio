@@ -1,0 +1,260 @@
+{% extends 'tienda/base.html' %}
+{% load static %}
+
+{% block title %}Miniaturas - ForjaD20{% endblock %}
+
+{% block content %}
+  <!-- Catálogo de Miniaturas (Simulación estática) -->
+  <section style="max-width:1200px; margin: 2rem auto;">
+    <h2 style="font-size:2rem; font-weight:bold; text-align:center; margin-bottom:1.5rem; color:white;">Catálogo de Miniaturas</h2>
+    <!-- Grid de miniaturas estáticas -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:1.5rem;">
+      {% comment %} Miniatura 1 {% endcomment %}
+      <div style="background:#1a202c; border:1px solid #2d3748; border-radius:0.5rem; overflow:hidden; color:white; display:flex; flex-direction:column;">
+        <img src="{% static 'images/guardia.jpg' %}" alt="Guardia Imperial" style="width:100%; height:180px; object-fit:cover;">
+        <div style="padding:1rem; flex-grow:1; display:flex; flex-direction:column;">
+          <h3 style="font-size:1.25rem; margin-bottom:0.5rem;">Pack Guardia Imperial</h3>
+          <p style="margin-bottom:0.75rem;">Pack de 10 figuras pre-pintadas</p>
+          <p style="font-weight:bold; margin-bottom:0.5rem;">Precio: 19.99 €</p>
+          <p style="margin-bottom:0.5rem;">Alquiler: Sí</p>
+          <div style="margin-top:auto; display:flex; justify-content:center; gap:0.5rem;">
+            <div style="display:flex; gap:0.5rem;">
+                    <button
+                      type="button"
+                      onclick="window.location.href='/guardia/';"
+                      style="flex:1; padding:0.5rem; background:#2b6cb0; color:white; border:none; border-radius:0.25rem; cursor:pointer;"
+                    >
+                      Comprar
+                    </button>
+                    <button
+                      type="button"
+                      onclick="window.location.href='/guardia/';"
+                      style="flex:1; padding:0.5rem; background:#2f855a; color:white; border:none; border-radius:0.25rem; cursor:pointer;"
+                    >
+                      Alquilar
+                    </button>
+                  </div></div>
+        </div>
+      </div>
+      {% comment %} Miniatura 2 {% endcomment %}
+      <div style="background:#1a202c; border:1px solid #2d3748; border-radius:0.5rem; overflow:hidden; color:white; display:flex; flex-direction:column;">
+        <img src="{% static 'images/orc.jpg' %}" alt="Orcos Montados" style="width:100%; height:180px; object-fit:cover;">
+        <div style="padding:1rem; flex-grow:1; display:flex; flex-direction:column;">
+          <h3 style="font-size:1.25rem; margin-bottom:0.5rem;">Pack Orcos</h3>
+          <p style="margin-bottom:0.75rem;">Pack de 8 miniaturas orco</p>
+          <p style="font-weight:bold; margin-bottom:0.5rem;">Precio: 24.50 €</p>
+          <p style="margin-bottom:0.5rem;">Alquiler: Sí</p>
+          <div style="margin-top:auto; display:flex; justify-content:center; gap:0.5rem;">
+            <div style="display:flex; gap:0.5rem;">
+                    <button
+                      type="button"
+                      onclick="window.location.href='/orc/';"
+                      style="flex:1; padding:0.5rem; background:#2b6cb0; color:white; border:none; border-radius:0.25rem; cursor:pointer;"
+                    >
+                      Comprar
+                    </button>
+                    <button
+                      type="button"
+                      onclick="window.location.href='/orc/';"
+                      style="flex:1; padding:0.5rem; background:#2f855a; color:white; border:none; border-radius:0.25rem; cursor:pointer;"
+                    >
+                      Alquilar
+                    </button>
+                  </div></div>
+        </div>
+      </div>
+      {% comment %} Miniatura 3 {% endcomment %}
+      <div style="background:#1a202c; border:1px solid #2d3748; border-radius:0.5rem; overflow:hidden; color:white; display:flex; flex-direction:column;">
+        <img src="{% static 'images/elfos.jpg' %}" alt="Sombras Élficas" style="width:100%; height:180px; object-fit:cover;">
+        <div style="padding:1rem; flex-grow:1; display:flex; flex-direction:column;">
+          <h3 style="font-size:1.25rem; margin-bottom:0.5rem;">Sombras Élficas</h3>
+          <p style="margin-bottom:0.75rem;">Pack 8 miniaturas de élites élficas</p>
+          <p style="font-weight:bold; margin-bottom:0.5rem;">Precio: 22.00 €</p>
+          <p style="margin-bottom:0.5rem;">Alquiler: Sí</p>
+          <div style="margin-top:auto; display:flex; justify-content:center; gap:0.5rem;">
+            <div style="display:flex; gap:0.5rem;">
+                    <button
+                      type="button"
+                      onclick="window.location.href='/elfos/';"
+                      style="flex:1; padding:0.5rem; background:#2b6cb0; color:white; border:none; border-radius:0.25rem; cursor:pointer;"
+                    >
+                      Comprar
+                    </button>
+                    <button
+                      type="button"
+                      onclick="window.location.href='/elfos/';"
+                      style="flex:1; padding:0.5rem; background:#2f855a; color:white; border:none; border-radius:0.25rem; cursor:pointer;"
+                    >
+                      Alquilar
+                    </button>
+                  </div></div>
+        </div>
+      </div>
+      {% comment %} Miniatura 4 {% endcomment %}
+      <div style="background:#1a202c; border:1px solid #2d3748; border-radius:0.5rem; overflow:hidden; color:white; display:flex; flex-direction:column;">
+        <img src="{% static 'images/mages.jpg' %}" alt="Magos Negros" style="width:100%; height:180px; object-fit:cover;">
+        <div style="padding:1rem; flex-grow:1; display:flex; flex-direction:column;">
+          <h3 style="font-size:1.25rem; margin-bottom:0.5rem;">Magos Negros</h3>
+          <p style="margin-bottom:0.75rem;">Grupo de 4 hechiceros oscuros</p>
+          <p style="font-weight:bold; margin-bottom:0.5rem;">Precio: 34.00 €</p>
+          <p style="margin-bottom:0.5rem;">Alquiler: No</p>
+          <div style="margin-top:auto; display:flex; justify-content:center; gap:0.5rem;">
+            <div style="display:flex; gap:0.5rem;">
+                    <button
+                      type="button"
+                      onclick="window.location.href='/mages/';"
+                      style="flex:1; padding:0.5rem; background:#2b6cb0; color:white; border:none; border-radius:0.25rem; cursor:pointer;"
+                    >
+                      Comprar
+                    </button>
+                    
+                  </div></div>
+        </div>
+      </div>
+      {% comment %} Miniatura 5 {% endcomment %}
+      <div style="background:#1a202c; border:1px solid #2d3748; border-radius:0.5rem; overflow:hidden; color:white; display:flex; flex-direction:column;">
+        <img src="{% static 'images/goblin.jpg' %}" alt="Tropa Goblin" style="width:100%; height:180px; object-fit:cover;">
+        <div style="padding:1rem; flex-grow:1; display:flex; flex-direction:column;">
+          <h3 style="font-size:1.25rem; margin-bottom:0.5rem;">Tropa Goblin</h3>
+          <p style="margin-bottom:0.75rem;">Horda de 15 goblins básicos</p>
+          <p style="font-weight:bold; margin-bottom:0.5rem;">Precio: 59.99 €</p>
+          <p style="margin-bottom:0.5rem;">Alquiler: Sí</p>
+          <div style="margin-top:auto; display:flex; justify-content:center; gap:0.5rem;">
+            <div style="display:flex; gap:0.5rem;">
+                    <button
+                      type="button"
+                      onclick="window.location.href='/goblin/';"
+                      style="flex:1; padding:0.5rem; background:#2b6cb0; color:white; border:none; border-radius:0.25rem; cursor:pointer;"
+                    >
+                      Comprar
+                    </button>
+                    <button
+                      type="button"
+                      onclick="window.location.href='/goblin/';"
+                      style="flex:1; padding:0.5rem; background:#2f855a; color:white; border:none; border-radius:0.25rem; cursor:pointer;"
+                    >
+                      Alquilar
+                    </button>
+                  </div></div>
+        </div>
+      </div>
+      {% comment %} Miniatura 6 {% endcomment %}
+      <div style="background:#1a202c; border:1px solid #2d3748; border-radius:0.5rem; overflow:hidden; color:white; display:flex; flex-direction:column;">
+        <img src="{% static 'images/giant.jpg' %}" alt="Gigante de Piedra" style="width:100%; height:180px; object-fit:cover;">
+        <div style="padding:1rem; flex-grow:1; display:flex; flex-direction:column;">
+          <h3 style="font-size:1.25rem; margin-bottom:0.5rem;">Gigante de Piedra</h3>
+          <p style="margin-bottom:0.75rem;">Figura grande de Gigante</p>
+          <p style="font-weight:bold; margin-bottom:0.5rem;">Precio: 44.50 €</p>
+          <p style="margin-bottom:0.5rem;">Alquiler: Sí</p>
+          <div style="margin-top:auto; display:flex; justify-content:center; gap:0.5rem;">
+            <div style="display:flex; gap:0.5rem;">
+                    <button
+                      type="button"
+                      onclick="window.location.href='/giant/';"
+                      style="flex:1; padding:0.5rem; background:#2b6cb0; color:white; border:none; border-radius:0.25rem; cursor:pointer;"
+                    >
+                      Comprar
+                    </button>
+                    <button
+                      type="button"
+                      onclick="window.location.href='/giant/';"
+                      style="flex:1; padding:0.5rem; background:#2f855a; color:white; border:none; border-radius:0.25rem; cursor:pointer;"
+                    >
+                      Alquilar
+                    </button>
+                  </div></div>
+        </div>
+      </div>
+      {% comment %} Miniatura 7 {% endcomment %}
+      <div style="background:#1a202c; border:1px solid #2d3748; border-radius:0.5rem; overflow:hidden; color:white; display:flex; flex-direction:column;">
+        <img src="{% static 'images/lobo.jpg' %}" alt="Señor de los Lobos" style="width:100%; height:180px; object-fit:cover;">
+        <div style="padding:1rem; flex-grow:1; display:flex; flex-direction:column;">
+          <h3 style="font-size:1.25rem; margin-bottom:0.5rem;">Señor de los lobos</h3>
+          <p style="margin-bottom:0.75rem;">Héroe con armadura de lobos</p>
+          <p style="font-weight:bold; margin-bottom:0.5rem;">Precio: 29.99 €</p>
+          <p style="margin-bottom:0.5rem;">Alquiler: Sí</p>
+          <div style="margin-top:auto; display:flex; justify-content:center; gap:0.5rem;">
+            <div style="display:flex; gap:0.5rem;">
+                    <button
+                      type="button"
+                      onclick="window.location.href='/lobo/';"
+                      style="flex:1; padding:0.5rem; background:#2b6cb0; color:white; border:none; border-radius:0.25rem; cursor:pointer;"
+                    >
+                      Comprar
+                    </button>
+                    <button
+                      type="button"
+                      onclick="window.location.href='/lobo/';"
+                      style="flex:1; padding:0.5rem; background:#2f855a; color:white; border:none; border-radius:0.25rem; cursor:pointer;"
+                    >
+                      Alquilar
+                    </button>
+                  </div></div>
+        </div>
+      </div>
+      {% comment %} Miniatura 8 {% endcomment %}
+      <div style="background:#1a202c; border:1px solid #2d3748; border-radius:0.5rem; overflow:hidden; color:white; display:flex; flex-direction:column;">
+        <img src="{% static 'images/dragon.jpg' %}" alt="Dragón" style="width:100%; height:180px; object-fit:cover;">
+        <div style="padding:1rem; flex-grow:1; display:flex; flex-direction:column;">
+          <h3 style="font-size:1.25rem; margin-bottom:0.5rem;">Dragon Ancestral</h3>
+          <p style="margin-bottom:0.75rem;">Miniatura de Dragón de gran tamaño</p>
+          <p style="font-weight:bold; margin-bottom:0.5rem;">Precio: 79.99 €</p>
+          <p style="margin-bottom:0.5rem;">Alquiler: Sí</p>
+          <div style="margin-top:auto; display:flex; justify-content:center; gap:0.5rem;">
+            <div style="display:flex; gap:0.5rem;">
+                    <button
+                      type="button"
+                      onclick="window.location.href='/dragon/';"
+                      style="flex:1; padding:0.5rem; background:#2b6cb0; color:white; border:none; border-radius:0.25rem; cursor:pointer;"
+                    >
+                      Comprar
+                    </button>
+                    <button
+                      type="button"
+                      onclick="window.location.href='/dragon/';"
+                      style="flex:1; padding:0.5rem; background:#2f855a; color:white; border:none; border-radius:0.25rem; cursor:pointer;"
+                    >
+                      Alquilar
+                    </button>
+                  </div></div>
+        </div>
+      </div>
+
+
+      <!-- Agrega más miniaturas 6-12 en igual formato -->
+    </div>
+    <!-- Simulación de paginación -->
+<div style="
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  background: #1a202c;
+  padding: 0.75rem 1rem;
+  gap: 0.5rem;
+">
+  <span style="color: white; font-weight: bold; white-space: nowrap;">Página:</span>
+  <div style="display: flex; gap: 0.25rem; white-space: nowrap;">
+    <span style="padding:0.25rem 0.75rem; border:1px solid #2d3748; border-radius:0.25rem; color:white; cursor:pointer;">1</span>
+    <span style="padding:0.25rem 0.75rem; border:1px solid #2d3748; border-radius:0.25rem; color:white; cursor:pointer;">2</span>
+    <span style="padding:0.25rem 0.75rem; border:1px solid #2d3748; border-radius:0.25rem; color:white; cursor:pointer;">3</span>
+    <span style="padding:0.25rem 0.75rem; border:1px solid #2d3748; border-radius:0.25rem; color:white; cursor:pointer;">4</span>
+    <span style="padding:0.25rem 0.75rem; border:1px solid #2d3748; border-radius:0.25rem; color:white; cursor:pointer;">5</span>
+    <span style="padding:0.25rem 0.75rem; border:1px solid #2d3748; border-radius:0.25rem; color:white; cursor:pointer;">6</span>
+    <span style="padding:0.25rem 0.75rem; border:1px solid #2d3748; border-radius:0.25rem; color:white; cursor:pointer;">7</span>
+    <span style="padding:0.25rem 0.75rem; border:1px solid #2d3748; border-radius:0.25rem; color:white; cursor:pointer;">8</span>
+    <span style="padding:0.25rem 0.75rem; border:1px solid #2d3748; border-radius:0.25rem; color:white; cursor:pointer;">9</span>
+    <span style="padding:0.25rem 0.75rem; border:1px solid #2d3748; border-radius:0.25rem; color:white; cursor:pointer;">10</span>
+    <span style="padding:0.25rem 0.75rem; border:1px solid #2d3748; border-radius:0.25rem; color:white; cursor:pointer;">11</span>
+    <span style="padding:0.25rem 0.75rem; border:1px solid #2d3748; border-radius:0.25rem; color:white; cursor:pointer;">12</span>
+    <span style="padding:0.25rem 0.75rem; border:1px solid #2d3748; border-radius:0.25rem; color:white; cursor:pointer;">13</span>
+    <span style="padding:0.25rem 0.75rem; border:1px solid #2d3748; border-radius:0.25rem; color:white; cursor:pointer;">14</span>
+    <span style="padding:0.25rem 0.75rem; border:1px solid #2d3748; border-radius:0.25rem; color:white; cursor:pointer;">15</span>
+    <span style="padding:0.25rem 0.75rem; border:1px solid #2d3748; border-radius:0.25rem; color:white; cursor:pointer;">16</span>
+    <span style="padding:0.25rem 0.75rem; border:1px solid #2d3748; border-radius:0.25rem; color:white; cursor:pointer;">17</span>
+    
+    
+  </div>
+</div>
+  </section>
+{% endblock %}
