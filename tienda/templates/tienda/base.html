@@ -106,9 +106,37 @@
     {% endblock %}
 </main>
 
-<footer>
-    &copy; {{ now.year }} ForjaD20. Todos los derechos reservados. Diseñado con ❤️ para el mundo de los juegos de mesa.
+<footer style="background:#1a1a1a; padding:2rem 0; color:#ddd; border-top:1px solid #333;">
+  <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between; gap:1rem;">
+    <div>
+      <h3 style="color:white; font-size:1.25rem; margin-bottom:0.5rem;">ForjaD20</h3>
+      <p>Tu tienda de juegos de mesa, miniaturas y cursos.</p>
+    </div>
+    <div>
+      <h4 style="color:white; font-size:1.1rem; margin-bottom:0.5rem;">Enlaces</h4>
+      <ul style="list-style:none; padding:0;">
+        <li><a href="{% url 'home' %}" style="color:#bbb; text-decoration:none;">Inicio</a></li>
+        <li><a href="{% url 'juegos_mesa' %}" style="color:#bbb; text-decoration:none;">Juegos de Mesa</a></li>
+        <li><a href="{% url 'modelado' %}" style="color:#bbb; text-decoration:none;">Diseño 3D</a></li>
+        <li><a href="{% url 'miniaturas' %}" style="color:#bbb; text-decoration:none;">Miniaturas</a></li>
+        <li><a href="{% url 'cursos_reservas' %}" style="color:#bbb; text-decoration:none;">Tienda Física</a></li>
+        <li><a href="{% url 'foro' %}" style="color:#bbb; text-decoration:none;">Foro</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="color:white; font-size:1.1rem; margin-bottom:0.5rem;">Contacto</h4>
+      <p>Email: <a href="mailto:info@forjad20.com" style="color:#bbb;">info@forjad20.com</a></p>
+      <p>Teléfono: <a style="color:#bbb;">900 000 000</a></p>
+      <p>Dirección <a style="color:#bbb;">Avenida Dungeons and Dragons 20, Madrid, Madrid</a></p>
+
+    </div>
+   
+  </div>
+  <div style="text-align:center; margin-top:1.5rem; font-size:0.875rem; color:#666;">
+    &copy; {{ now|date:"Y" }} ForjaD20. Todos los derechos reservados.
+  </div>
 </footer>
+
 
 </body>
 </html>
