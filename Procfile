@@ -1,1 +1,1 @@
-web: forjaD20 paginadjango.wsgi
+web: gunicorn PaginaDjango.wsgi
