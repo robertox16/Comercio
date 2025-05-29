@@ -1,1 +1,1 @@
-web: gunicorn PaginaDjango.wsgi
+web: gunicorn tienda_juegos.wsgi
